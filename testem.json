@@ -7,5 +7,6 @@
     "serve_files": [
          "dest/js/**/*.js",
          "compiledTest/**/*.js"
-   ]
+   ],
+   "before_tests": "node_modules/.bin/gulp testBuild"
 }
