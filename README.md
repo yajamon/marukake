@@ -6,7 +6,7 @@
 ```bash
 npm install
 ```
-and 
+and
 
 ```bash
 npm run
