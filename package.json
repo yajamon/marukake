@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "dtsm install",
     "build": "gulp build",
-    "prewatch":"gulp build",
+    "prewatch": "gulp build",
     "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-typescript": "^2.8.1",
+    "testem": "^1.4.1",
     "typescript": "^1.5.3"
   }
 }

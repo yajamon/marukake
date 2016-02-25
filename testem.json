@@ -1,0 +1,11 @@
+{
+    "framework": "mocha+chai",
+    "src_files": [
+        "src/ts/**/*.ts",
+        "test/**/*.ts"
+    ],
+    "serve_files": [
+         "dest/js/**/*.js",
+         "compiledTest/**/*.js"
+   ]
+}
