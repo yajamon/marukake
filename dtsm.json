@@ -21,6 +21,12 @@
     },
     "gulp-less/gulp-less.d.ts": {
       "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "mocha/mocha.d.ts": {
+      "ref": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
+    },
+    "chai/chai.d.ts": {
+      "ref": "dade4414712ce84e3c63393f1aae407e9e7e6af7"
     }
   }
 }
