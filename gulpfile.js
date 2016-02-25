@@ -14,6 +14,7 @@ var path = {
         ts: "src/ts/**/*.ts",
         less: "src/less/**/*.less",
         img: "src/img/**/*.*",
+        test: "test/**/*.ts",
     },
     dest : {
         root: "dest/",
@@ -24,10 +25,12 @@ var path = {
         vendor: {
             root: "dest/vendor/",
         },
-    }
+        test: "compiledTest/",
+    },
 };
 
 var tsProject = ts.createProject('src/tsconfig.json', {out: "app.js", sortOutput: true});
+var testProject = ts.createProject('test/tsconfig.json');
 
 // main tasks
 
@@ -44,6 +47,11 @@ gulp.task('watch', [
     'watch:ts',
     'watch:less',
     'watch:img',
+]);
+
+gulp.task('testBuild', [
+    'build',
+    'build:test'
 ]);
 
 // sub tasks
@@ -73,6 +81,13 @@ gulp.task('build:img', function(){
 
 gulp.task('build:vendor', function (){
 
+});
+
+gulp.task('build:test', function(){
+    var tsResult = gulp.src(path.src.test)
+        .pipe(ts(testProject));
+    
+    tsResult.js.pipe(gulp.dest(path.dest.test));
 });
 
 
