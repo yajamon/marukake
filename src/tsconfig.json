@@ -3,6 +3,6 @@
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
-        "target": "ES5"
+        "target": "es5"
     }
 }
