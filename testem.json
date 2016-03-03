@@ -8,5 +8,8 @@
          "dest/js/**/*.js",
          "compiledTest/**/*.js"
    ],
-   "before_tests": "node_modules/.bin/gulp testBuild"
+   "before_tests": "node_modules/.bin/gulp testBuild",
+   "launch_in_ci": [
+       "PhantomJS"
+   ]
 }
