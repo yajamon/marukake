@@ -3,3 +3,5 @@ node_js:
     - "4.1"
 before_script:
     - "npm run getdtsForCI"
+script:
+    - "npm test ci"
