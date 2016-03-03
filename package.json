@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "scripts": {
-    "postinstall": "dtsm install",
+    "getdts": "dtsm install",
     "build": "gulp build",
     "prewatch": "gulp build",
     "watch": "gulp watch",
