@@ -6,6 +6,7 @@
   "dependencies": {},
   "scripts": {
     "getdts": "dtsm install",
+    "getdtsForCI": "dtsm install --insight false",
     "build": "gulp build",
     "prewatch": "gulp build",
     "watch": "gulp watch",
