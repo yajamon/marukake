@@ -2,4 +2,4 @@ language: node_js
 node_js:
     - "4.1"
 before_script:
-    - "npm getdts --insight false"
+    - "npm run getdts --insight false"
