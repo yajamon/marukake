@@ -6,7 +6,9 @@ namespace MainApp {
      * Square
      */
     export class Square {
+        state: SQUARE_STATE;
         constructor() {
+            this.state = SQUARE_STATE.EMPTY;
         }
     }
 }
