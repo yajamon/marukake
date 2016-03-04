@@ -9,7 +9,7 @@ describe("Square", ()=>{
         it("is EMPTY when create", ()=>{
             let square = new MainApp.Square();
             expect(square.state).to.not.be.undefined
-                .and.equal(MainApp.SQUARE_STATE_EMPTY);
+                .and.equal(MainApp.SQUARE_STATE.EMPTY);
         });
     });
 });
