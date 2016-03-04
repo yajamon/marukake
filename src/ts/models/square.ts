@@ -1,4 +1,7 @@
 namespace MainApp {
+    export enum SQUARE_STATE {
+        EMPTY,
+    }
     /**
      * Square
      */
