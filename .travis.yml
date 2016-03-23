@@ -6,3 +6,6 @@ before_script:
 script:
     - "npm test ci"
 sudo: false
+cache:
+    directories:
+        - node_modules
