@@ -32,5 +32,13 @@ describe("Field", function(){
                 expect(element).to.have.lengthOf(3);
             });
         });
+        
+        it("hasn't element of null", ()=>{
+            field.data.forEach(elements => {
+                elements.forEach(element =>{
+                    expect(element).not.to.be.null;
+                });
+            });
+        });
     });
 });
