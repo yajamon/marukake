@@ -6,7 +6,11 @@
 var expect = chai.expect;
 
 describe("Field", function(){
-    let field = new MainApp.Field();
+    let field: MainApp.Field;
+    
+    beforeEach(()=>{
+        field = new MainApp.Field();
+    });
 
     describe("data", function() {
         it("is array", function () {
