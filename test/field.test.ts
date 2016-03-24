@@ -40,5 +40,13 @@ describe("Field", function(){
                 });
             });
         });
+        
+        it("has element of Square", ()=>{
+            field.data.forEach(elements =>{
+                elements.forEach(element=>{
+                    expect(element).to.be.a("Square");
+                });
+            });
+        });
     });
 });
