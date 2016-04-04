@@ -25,6 +25,8 @@
   "homepage": "https://github.com/yajamon/marukake#readme",
   "devDependencies": {
     "dtsm": "^0.10.3",
+    "eslint": "^2.6.0",
+    "eslint-config-google": "^0.4.0",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
     "gulp-typescript": "^2.8.1",
