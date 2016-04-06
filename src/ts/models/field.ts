@@ -1,3 +1,5 @@
+/// <reference path="./square.ts" />
+
 namespace MainApp {
     /**
      * Field
@@ -6,9 +8,9 @@ namespace MainApp {
         data:any[][];
         constructor() {
             this.data = [
-                [null, null, null],
-                [null, null, null],
-                [null, null, null],
+                [new Square(), new Square(), new Square()],
+                [new Square(), new Square(), new Square()],
+                [new Square(), new Square(), new Square()],
             ];
         }
     }
