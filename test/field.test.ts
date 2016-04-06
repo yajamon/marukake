@@ -1,7 +1,7 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../src/ts/models/field.ts" />
-
+/// <reference path="../src/ts/models/square.ts" />
 
 var expect = chai.expect;
 
@@ -44,7 +44,7 @@ describe("Field", function(){
         it("has element of Square", ()=>{
             field.data.forEach(elements =>{
                 elements.forEach(element=>{
-                    expect(element).to.be.a("Square");
+                    expect(element).to.be.an.instanceOf(MainApp.Square);
                 });
             });
         });
