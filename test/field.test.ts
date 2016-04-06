@@ -12,7 +12,7 @@ describe("Field", function(){
         field = new MainApp.Field();
     });
 
-    describe("data", function() {
+    describe("#data", function() {
         it("is array", function () {
             expect(field.data).to.be.a("array");
         });
