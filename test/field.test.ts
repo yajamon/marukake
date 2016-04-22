@@ -1,13 +1,13 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../src/ts/models/field.ts" />
-/// <reference path="../src/ts/models/square.ts" />
+/// <reference path="../src/ts/models/Square.ts" />
 
 var expect = chai.expect;
 
 describe("Field", function(){
     let field: MainApp.Field;
-    
+
     beforeEach(()=>{
         field = new MainApp.Field();
     });
@@ -20,19 +20,19 @@ describe("Field", function(){
         it("width 3", function() {
             expect(field.data).to.have.lengthOf(3);
         });
-        
+
         it("has array in data", function () {
             field.data.forEach((element)=>{
                 expect(element).to.be.a("array");
             });
         });
-        
+
         it("height 3", function () {
             field.data.forEach((element)=>{
                 expect(element).to.have.lengthOf(3);
             });
         });
-        
+
         it("hasn't element of null", ()=>{
             field.data.forEach(elements => {
                 elements.forEach(element =>{
@@ -40,7 +40,7 @@ describe("Field", function(){
                 });
             });
         });
-        
+
         it("has element of Square", ()=>{
             field.data.forEach(elements =>{
                 elements.forEach(element=>{
