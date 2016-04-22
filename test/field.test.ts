@@ -2,6 +2,8 @@
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../src/ts/models/Field.ts" />
 /// <reference path="../src/ts/models/Square.ts" />
+/// <reference path="../src/ts/models/interfaces/Size.ts" />
+
 
 var expect = chai.expect;
 
@@ -47,6 +49,15 @@ describe("Field", function(){
                     expect(element).to.be.an.instanceOf(MainApp.Square);
                 });
             });
+        });
+    });
+
+    describe(".size", () => {
+        it("is not writable", () => {
+            expect(() => {
+                let size: MainApp.Size = { width: 10, height: 15 };
+                field.size = size;
+            }).to.throw(Error);
         });
     });
 });
