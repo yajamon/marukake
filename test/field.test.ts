@@ -25,7 +25,7 @@ describe("Field", function(){
             });
         });
 
-        it("hasn't element of null", ()=>{
+        it("hasn't element of null", () => {
             field.data.forEach(element => {
                 expect(element).not.to.be.null;
             });
