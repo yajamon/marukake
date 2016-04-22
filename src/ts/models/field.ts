@@ -5,7 +5,7 @@ namespace MainApp {
      * Field
      */
     export class Field {
-        data:any[][];
+        data:Square[][];
         constructor() {
             this.data = [
                 [new Square(), new Square(), new Square()],
