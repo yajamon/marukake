@@ -24,7 +24,7 @@ namespace MainApp {
             return this._size;
         }
         public set size(v: Size) {
-            throw "Can't write property";
+            throw new Error("Can't write property");
         }
 
     }
