@@ -2,14 +2,17 @@
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../src/ts/models/Field.ts" />
 /// <reference path="../src/ts/models/Square.ts" />
+/// <reference path="../src/ts/models/interfaces/Size.ts" />
+
 
 var expect = chai.expect;
 
 describe("Field", function(){
     let field: MainApp.Field;
 
-    beforeEach(()=>{
-        field = new MainApp.Field();
+    beforeEach(() => {
+        let size: MainApp.Size = { width: 3, height: 3 };
+        field = new MainApp.Field(size);
     });
 
     describe(".data", function() {
@@ -17,36 +20,25 @@ describe("Field", function(){
             expect(field.data).to.be.a("array");
         });
 
-        it("width 3", function() {
-            expect(field.data).to.have.lengthOf(3);
-        });
-
-        it("has array in data", function () {
-            field.data.forEach((element)=>{
-                expect(element).to.be.a("array");
-            });
-        });
-
-        it("height 3", function () {
-            field.data.forEach((element)=>{
-                expect(element).to.have.lengthOf(3);
-            });
-        });
-
-        it("hasn't element of null", ()=>{
-            field.data.forEach(elements => {
-                elements.forEach(element =>{
-                    expect(element).not.to.be.null;
-                });
+        it("hasn't element of null", () => {
+            field.data.forEach(element => {
+                expect(element).not.to.be.null;
             });
         });
 
         it("has element of Square", ()=>{
-            field.data.forEach(elements =>{
-                elements.forEach(element=>{
-                    expect(element).to.be.an.instanceOf(MainApp.Square);
-                });
+            field.data.forEach(element =>{
+                expect(element).to.be.an.instanceOf(MainApp.Square);
             });
+        });
+    });
+
+    describe(".size", () => {
+        it("is not writable", () => {
+            expect(() => {
+                let size: MainApp.Size = { width: 10, height: 15 };
+                field.size = size;
+            }).to.throw(Error);
         });
     });
 });
