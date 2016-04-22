@@ -26,18 +26,14 @@ describe("Field", function(){
         });
 
         it("hasn't element of null", ()=>{
-            field.data.forEach(elements => {
-                elements.forEach(element =>{
-                    expect(element).not.to.be.null;
-                });
+            field.data.forEach(element => {
+                expect(element).not.to.be.null;
             });
         });
 
         it("has element of Square", ()=>{
-            field.data.forEach(elements =>{
-                elements.forEach(element=>{
-                    expect(element).to.be.an.instanceOf(MainApp.Square);
-                });
+            field.data.forEach(element =>{
+                expect(element).to.be.an.instanceOf(MainApp.Square);
             });
         });
     });
