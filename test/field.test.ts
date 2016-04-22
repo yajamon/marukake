@@ -19,19 +19,9 @@ describe("Field", function(){
             expect(field.data).to.be.a("array");
         });
 
-        it("width 3", function() {
-            expect(field.data).to.have.lengthOf(3);
-        });
-
         it("has array in data", function () {
             field.data.forEach((element)=>{
                 expect(element).to.be.a("array");
-            });
-        });
-
-        it("height 3", function () {
-            field.data.forEach((element)=>{
-                expect(element).to.have.lengthOf(3);
             });
         });
 
