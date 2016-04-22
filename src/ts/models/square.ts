@@ -1,9 +1,11 @@
+/// <reference path="./interfaces/puttable.ts" />
+
 namespace MainApp {
     /**
      * Square
      */
     export class Square {
-        constructor() {
+        constructor(public piece:Puttable = null) {
         }
     }
 }
