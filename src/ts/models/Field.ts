@@ -12,11 +12,12 @@ namespace MainApp {
 
         constructor(size: Size) {
             this._size = size;
-            this.data = [
-                [new Square(), new Square(), new Square()],
-                [new Square(), new Square(), new Square()],
-                [new Square(), new Square(), new Square()],
-            ];
+            this.data = [];
+
+            let count = size.width * size.height;
+            for (var index = 0; index < count; index++) {
+                this.data.push(new Square());
+            }
         }
 
         public get size(): Size {
