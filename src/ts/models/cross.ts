@@ -1,4 +1,4 @@
-/// <reference path="./interfaces/puttable.ts" />
+/// <reference path="./interfaces/Puttable.ts" />
 
 namespace MainApp {
     /**
