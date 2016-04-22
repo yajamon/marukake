@@ -20,12 +20,6 @@ describe("Field", function(){
             expect(field.data).to.be.a("array");
         });
 
-        it("has array in data", function () {
-            field.data.forEach((element)=>{
-                expect(element).to.be.a("array");
-            });
-        });
-
         it("hasn't element of null", () => {
             field.data.forEach(element => {
                 expect(element).not.to.be.null;
