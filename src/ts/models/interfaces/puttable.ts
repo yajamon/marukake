@@ -1,4 +1,4 @@
 namespace MainApp {
-    export interface Puttable {
+    export interface Puttable extends Object {
     }
 }
