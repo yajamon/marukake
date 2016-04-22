@@ -10,8 +10,9 @@ var expect = chai.expect;
 describe("Field", function(){
     let field: MainApp.Field;
 
-    beforeEach(()=>{
-        field = new MainApp.Field();
+    beforeEach(() => {
+        let size: MainApp.Size = { width: 3, height: 3 };
+        field = new MainApp.Field(size);
     });
 
     describe(".data", function() {
