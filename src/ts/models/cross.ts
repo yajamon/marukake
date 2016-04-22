@@ -2,10 +2,10 @@
 
 namespace MainApp {
     /**
-     * Square
+     * Cross
      */
-    export class Square {
-        constructor(public piece:Puttable = null) {
+    export class Cross implements Puttable {
+        constructor() {
         }
     }
 }

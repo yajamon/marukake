@@ -2,10 +2,10 @@
 
 namespace MainApp {
     /**
-     * Square
+     * Circle
      */
-    export class Square {
-        constructor(public piece:Puttable = null) {
+    export class Circle implements Puttable {
+        constructor() {
         }
     }
 }
