@@ -1,4 +1,4 @@
-/// <reference path="./square.ts" />
+/// <reference path="./Square.ts" />
 
 namespace MainApp {
     /**

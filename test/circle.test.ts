@@ -1,6 +1,6 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
-/// <reference path="../src/ts/models/circle.ts" />
+/// <reference path="../src/ts/models/Circle.ts" />
 
 var expect = chai.expect;
 
