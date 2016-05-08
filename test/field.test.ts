@@ -9,6 +9,8 @@ var expect = chai.expect;
 
 describe("Field", function () {
     let field: MainApp.Field;
+    let circle: MainApp.Circle = new MainApp.Circle();
+    let cross: MainApp.Cross = new MainApp.Cross();
 
     beforeEach(() => {
         let size: MainApp.Size = { width: 3, height: 3 };
@@ -44,7 +46,6 @@ describe("Field", function () {
 
     describe("#putPiece", () => {
         it("can put puttable object to first", () => {
-            let circle = new MainApp.Circle();
             let firstPosition: MainApp.Position = { x: 0, y: 0 };
             field.putPiece(circle, firstPosition);
             field.data.forEach((element, index) => {
@@ -57,7 +58,6 @@ describe("Field", function () {
         });
 
         it("can put object to last", () => {
-            let cross = new MainApp.Cross();
             let size = field.size;
             let lastPosition: MainApp.Position = {
                 x: field.size.width - 1,
@@ -75,7 +75,6 @@ describe("Field", function () {
         });
 
         it("can't put object to outside", () => {
-            let circle = new MainApp.Circle();
             let size = field.size;
             let outsidePosition = {
                 x: size.width,
