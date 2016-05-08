@@ -7,7 +7,7 @@
 
 var expect = chai.expect;
 
-describe("Field", function(){
+describe("Field", function () {
     let field: MainApp.Field;
 
     beforeEach(() => {
@@ -15,7 +15,7 @@ describe("Field", function(){
         field = new MainApp.Field(size);
     });
 
-    describe(".data", function() {
+    describe(".data", function () {
         it("is array", function () {
             expect(field.data).to.be.a("array");
         });
@@ -26,8 +26,8 @@ describe("Field", function(){
             });
         });
 
-        it("has element of Square", ()=>{
-            field.data.forEach(element =>{
+        it("has element of Square", () => {
+            field.data.forEach(element => {
                 expect(element).to.be.an.instanceOf(MainApp.Square);
             });
         });
