@@ -73,5 +73,17 @@ describe("Field", function () {
                 }
             });
         });
+
+        it("can't put object to outside", () => {
+            let circle = new MainApp.Circle();
+            let size = field.size;
+            let outsidePosition = {
+                x: size.width,
+                y: size.height - 1,
+            };
+            expect(() => {
+                field.putPiece(circle, outsidePosition);
+            }).to.throw(Error);
+        });
     });
 });
