@@ -55,5 +55,23 @@ describe("Field", function () {
                 }
             });
         });
+
+        it("can put object to last", () => {
+            let cross = new MainApp.Cross();
+            let size = field.size;
+            let lastPosition: MainApp.Position = {
+                x: field.size.width - 1,
+                y: field.size.height - 1,
+            };
+            field.putPiece(cross, lastPosition);
+            field.data.forEach((element, index) => {
+                let lastIndex = field.data.length - 1;
+                if (index === lastIndex) {
+                    expect(element.piece).to.equal(cross);
+                } else {
+                    expect(element.piece).to.not.equal(cross);
+                }
+            });
+        });
     });
 });
