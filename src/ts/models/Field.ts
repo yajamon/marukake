@@ -32,7 +32,8 @@ namespace MainApp {
          * putPiece
          */
         public putPiece(piece: Puttable, position: Position) {
-            this.data[0].piece = piece;
+            let index = position.x + position.y * this.size.width;
+            this.data[index].piece = piece;
         }
     }
 }
