@@ -7,15 +7,17 @@
 
 var expect = chai.expect;
 
-describe("Field", function(){
+describe("Field", function () {
     let field: MainApp.Field;
+    let circle: MainApp.Circle = new MainApp.Circle();
+    let cross: MainApp.Cross = new MainApp.Cross();
 
     beforeEach(() => {
         let size: MainApp.Size = { width: 3, height: 3 };
         field = new MainApp.Field(size);
     });
 
-    describe(".data", function() {
+    describe(".data", function () {
         it("is array", function () {
             expect(field.data).to.be.a("array");
         });
@@ -26,8 +28,8 @@ describe("Field", function(){
             });
         });
 
-        it("has element of Square", ()=>{
-            field.data.forEach(element =>{
+        it("has element of Square", () => {
+            field.data.forEach(element => {
                 expect(element).to.be.an.instanceOf(MainApp.Square);
             });
         });
@@ -38,6 +40,48 @@ describe("Field", function(){
             expect(() => {
                 let size: MainApp.Size = { width: 10, height: 15 };
                 field.size = size;
+            }).to.throw(Error);
+        });
+    });
+
+    describe("#putPiece", () => {
+        it("can put puttable object to first", () => {
+            let firstPosition: MainApp.Position = { x: 0, y: 0 };
+            field.putPiece(circle, firstPosition);
+            field.data.forEach((element, index) => {
+                if (index === 0) {
+                    expect(element.piece).to.equal(circle);
+                } else {
+                    expect(element.piece).to.not.equal(circle);
+                }
+            });
+        });
+
+        it("can put object to last", () => {
+            let size = field.size;
+            let lastPosition: MainApp.Position = {
+                x: field.size.width - 1,
+                y: field.size.height - 1,
+            };
+            field.putPiece(cross, lastPosition);
+            field.data.forEach((element, index) => {
+                let lastIndex = field.data.length - 1;
+                if (index === lastIndex) {
+                    expect(element.piece).to.equal(cross);
+                } else {
+                    expect(element.piece).to.not.equal(cross);
+                }
+            });
+        });
+
+        it("can't put object to outside", () => {
+            let size = field.size;
+            let outsidePosition = {
+                x: size.width,
+                y: size.height - 1,
+            };
+            expect(() => {
+                field.putPiece(circle, outsidePosition);
             }).to.throw(Error);
         });
     });
