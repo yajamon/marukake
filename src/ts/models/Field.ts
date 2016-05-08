@@ -1,5 +1,6 @@
 /// <reference path="./Square.ts" />
 /// <reference path="./interfaces/Size.ts" />
+/// <reference path="./interfaces/Position.ts" />
 
 
 namespace MainApp {
@@ -27,5 +28,11 @@ namespace MainApp {
             throw new Error("Can't write property");
         }
 
+        /**
+         * putPiece
+         */
+        public putPiece(piece: Puttable, position: Position) {
+            this.data[0].piece = piece;
+        }
     }
 }
