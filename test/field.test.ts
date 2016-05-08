@@ -41,4 +41,19 @@ describe("Field", function () {
             }).to.throw(Error);
         });
     });
+
+    describe("#putPiece", () => {
+        it("can put puttable object to first", () => {
+            let circle = new MainApp.Circle();
+            let firstPosition: MainApp.Position = { x: 0, y: 0 };
+            field.putPiece(circle, firstPosition);
+            field.data.forEach((element, index) => {
+                if (index === 0) {
+                    expect(element.piece).to.equal(circle);
+                } else {
+                    expect(element.piece).to.not.equal(circle);
+                }
+            });
+        });
+    });
 });
