@@ -4,5 +4,6 @@
 var expect = chai.expect;
 
 describe("Player", () => {
-
+    describe(".pieces", () => {
+    });
 });
