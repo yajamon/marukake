@@ -52,5 +52,15 @@ describe("TurnManager", () => {
             manager.turnEnd();
             expect(manager.currentPlayer()).to.equal(player1);
         });
+
+        it("is return player3 by 3 players when turn 3", () => {
+            let player1 = new MainApp.Player();
+            let player2 = new MainApp.Player();
+            let player3 = new MainApp.Player();
+            manager.players = [player1, player2, player3];
+            manager.turnEnd();
+            manager.turnEnd();
+            expect(manager.currentPlayer()).to.equal(player3);
+        });
     });
 });
