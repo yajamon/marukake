@@ -5,5 +5,12 @@ namespace MainApp {
     export class TurnManager {
         constructor() {
         }
+
+        /**
+         * currentTurn
+         */
+        public currentTurn() {
+            return 1;
+        }
     }
 }
