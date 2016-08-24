@@ -1,9 +1,13 @@
+/// <reference path="./Player.ts" />
+
 namespace MainApp {
     /**
      * TurnManager
      */
     export class TurnManager {
         private turn: number;
+        public players: Player[];
+
         constructor() {
             this.turn = 1;
         }
@@ -20,6 +24,13 @@ namespace MainApp {
          */
         public turnEnd() {
             this.turn += 1;
+        }
+
+        /**
+         * currentPlayer
+         */
+        public currentPlayer() {
+            return this.players[0];
         }
     }
 }
