@@ -30,7 +30,7 @@ namespace MainApp {
          * currentPlayer
          */
         public currentPlayer() {
-            let index = (this.turn - 1) % 2;
+            let index = (this.turn - 1) % this.players.length;
             return this.players[index];
         }
     }
