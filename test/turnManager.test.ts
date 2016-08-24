@@ -1,6 +1,7 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/chai/chai.d.ts" />
 /// <reference path="../src/ts/models/TurnManager.ts" />
+/// <reference path="../src/ts/models/Player.ts" />
 
 
 var expect = chai.expect;
@@ -24,6 +25,15 @@ describe("TurnManager", () => {
             expect(manager.currentTurn()).to.equal(1);
             manager.turnEnd();
             expect(manager.currentTurn()).to.equal(2);
+        });
+    });
+
+    describe("#currentPlayer", () => {
+        it("is return player1 when turn 1", () => {
+            let player1 = new MainApp.Player();
+            let player2 = new MainApp.Player();
+            manager.players = [player1, player2];
+            expect(manager.currentPlayer()).to.equal(player1);
         });
     });
 });
