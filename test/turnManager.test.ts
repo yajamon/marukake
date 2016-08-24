@@ -20,6 +20,10 @@ describe("TurnManager", () => {
     });
 
     describe("#turnEnd", () => {
-
+        it("is count-up to turn", () => {
+            expect(manager.currentTurn()).to.equal(1);
+            manager.turnEnd();
+            expect(manager.currentTurn()).to.equal(2);
+        });
     });
 });
