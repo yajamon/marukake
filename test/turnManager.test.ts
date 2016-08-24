@@ -11,7 +11,10 @@ describe("TurnManager", () => {
     });
 
     describe("#currentTurn", () => {
-
+        it("is return '1' when initialize", () => {
+            let turn = manager.currentTurn();
+            expect(turn).to.equal(1);
+        });
     });
 
     describe("#turnEnd", () => {
