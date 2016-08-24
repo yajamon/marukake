@@ -35,5 +35,13 @@ describe("TurnManager", () => {
             manager.players = [player1, player2];
             expect(manager.currentPlayer()).to.equal(player1);
         });
+
+        it("is return player2 when turn 2", () => {
+            let player1 = new MainApp.Player();
+            let player2 = new MainApp.Player();
+            manager.players = [player1, player2];
+            manager.turnEnd();
+            expect(manager.currentPlayer()).to.equal(player2);
+        });
     });
 });
