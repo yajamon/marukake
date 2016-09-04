@@ -39,5 +39,13 @@ namespace MainApp {
             let index = this.culcIndex(position);
             this.data[index].piece = piece;
         }
+
+        /**
+         * existsPiece
+         */
+        public existsPiece(position: Position): boolean {
+            let index = this.culcIndex(position);
+            return this.data[index].piece != null;
+        }
     }
 }
