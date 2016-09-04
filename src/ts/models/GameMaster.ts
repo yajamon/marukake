@@ -25,5 +25,21 @@ namespace MainApp {
             this.turnManager = new TurnManager();
             this.turnManager.players = [player1, player2];
         }
+
+        /**
+         * putPosition
+         */
+        public put(position:Position) {
+            if (this.field.existsPiece(position)) {
+                this.putFailed();
+                return ;
+            }
+
+            let player = this.turnManager.currentPlayer();
+            this.field.putPiece(player.pieces.shift(), position);
+            this.turnManager.turnEnd();
+            this.putSuccess();
+        }
+
     }
 }
