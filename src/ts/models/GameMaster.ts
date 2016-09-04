@@ -12,10 +12,16 @@ namespace MainApp {
             let size: Size = { width: 3, height: 3 };
             this.field = new Field(size);
 
-            var player1 = new Player();
-            player1.pieces = new Array(5).map(() => new Circle());
-            var player2 = new Player();
-            player2.pieces = new Array(4).map(() => new Cross());
+            let player1 = new Player();
+            player1.pieces = [];
+            for (let index = 0; index < 5; index++) {
+                player1.pieces.push(new Circle());
+            }
+            let player2 = new Player();
+            player2.pieces = [];
+            for (let index = 0; index < 4; index++) {
+                player2.pieces.push(new Cross());
+            }
             this.turnManager = new TurnManager();
             this.turnManager.players = [player1, player2];
         }
