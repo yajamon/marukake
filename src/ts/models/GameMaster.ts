@@ -6,8 +6,11 @@ namespace MainApp {
      * GameMaster
      */
     export class GameMaster {
-        private field: Field;
+        public field: Field;
         private turnManager: TurnManager;
+
+        public putFailed = () => { };
+        public putSuccess = () => { };
         constructor() {
             let size: Size = { width: 3, height: 3 };
             this.field = new Field(size);
