@@ -49,7 +49,17 @@ namespace MainApp {
          * checkFinish
          */
         public checkFinish() {
+            if (this.existsEquarlLine()) {
+                return ;
+            }
             this.callbackFinish();
+        }
+
+        /**
+         * existsEquarlLine
+         */
+        public existsEquarlLine(): boolean{
+            return false;
         }
     }
 }
