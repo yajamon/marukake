@@ -49,17 +49,54 @@ namespace MainApp {
          * checkFinish
          */
         public checkFinish() {
-            if (this.existsEquarlLine()) {
+            if (this.existsEqualLine()) {
                 return ;
             }
             this.callbackFinish();
         }
 
         /**
-         * existsEquarlLine
+         * existsEqualLine
          */
-        public existsEquarlLine(): boolean{
+        public existsEqualLine(): boolean{
+            for (let yIndex = 0; yIndex < this.field.size.height; yIndex++) {
+                for (let xIndex = 0; xIndex < this.field.size.width; xIndex++) {
+                    if (this.equalsUpperRightDiagonally(xIndex, yIndex)) {
+                        return true;
+                    }
+                }
+            }
             return false;
+        }
+
+        /**
+         * equalsUpperRightDiagonally
+         */
+        public equalsUpperRightDiagonally(x: number, y: number): boolean{
+            let length = 3;
+            let diffX = 1;
+            let diffY = -1;
+            let base = this.field.data[this.field.culcIndex({ x: x, y: y })].piece;
+            for (let offset = 1; offset < length; offset++) {
+                let index = this.field.culcIndex({ x: x, y: y });
+                // invalid index
+                if (index < 0 && this.field.data.length - 1 < index) {
+                    return  false;
+                }
+                
+                // no piece
+                let target = this.field.data[index].piece;
+                if (target == null) {
+                    return false;
+                }
+                
+                // different piece
+                if (base.constructor != target.constructor) {
+                    return false;
+                }
+            }
+            // equal line
+            return true;
         }
     }
 }

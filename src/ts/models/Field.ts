@@ -28,7 +28,7 @@ namespace MainApp {
             throw new Error("Can't write property");
         }
 
-        private culcIndex(position: Position) {
+        public culcIndex(position: Position) {
             return position.x + position.y * this.size.width;
         }
 
