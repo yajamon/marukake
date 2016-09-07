@@ -61,7 +61,8 @@ namespace MainApp {
         public existsEqualLine(): boolean{
             for (let yIndex = 0; yIndex < this.field.size.height; yIndex++) {
                 for (let xIndex = 0; xIndex < this.field.size.width; xIndex++) {
-                    if (this.equalsUpperRightDiagonally(xIndex, yIndex)) {
+                    let start: Position = { x: xIndex, y: yIndex };
+                    if (this.equalsUpperRightDiagonally(start)) {
                         return true;
                     }
                 }
@@ -104,11 +105,7 @@ namespace MainApp {
         /**
          * equalsUpperRightDiagonally
          */
-        public equalsUpperRightDiagonally(x: number, y: number): boolean{
-            let start: Position = {
-                x: x,
-                y: y
-            };
+        public equalsUpperRightDiagonally(start: Position): boolean{
             let diff: Position = {
                 x: 1,
                 y: -1
