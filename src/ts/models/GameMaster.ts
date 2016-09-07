@@ -11,6 +11,7 @@ namespace MainApp {
 
         public putFailed = () => { };
         public putSuccess = () => { };
+        public callbackFinish = () => { };
         constructor() {
             let size: Size = { width: 3, height: 3 };
             this.field = new Field(size);
@@ -44,5 +45,11 @@ namespace MainApp {
             this.putSuccess();
         }
 
+        /**
+         * checkFinish
+         */
+        public checkFinish() {
+            this.callbackFinish();
+        }
     }
 }
