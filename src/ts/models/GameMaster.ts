@@ -70,15 +70,16 @@ namespace MainApp {
         }
 
         /**
-         * equalsUpperRightDiagonally
+         * equalsLine
          */
-        public equalsUpperRightDiagonally(x: number, y: number): boolean{
-            let length = 3;
-            let diffX = 1;
-            let diffY = -1;
-            let base = this.field.data[this.field.culcIndex({ x: x, y: y })].piece;
+        public equalsLine(start:Position, diff:Position, length:number) {
+            let baseIndex = this.field.culcIndex(start);
+            let base = this.field.data[baseIndex];
             for (let offset = 1; offset < length; offset++) {
-                let index = this.field.culcIndex({ x: x, y: y });
+                let index = this.field.culcIndex({
+                    x: start.x + diff.x * offset,
+                    y: start.y + diff.y * offset
+                });
                 // invalid index
                 if (index < 0 && this.field.data.length - 1 < index) {
                     return  false;
@@ -97,6 +98,23 @@ namespace MainApp {
             }
             // equal line
             return true;
+
+        }
+
+        /**
+         * equalsUpperRightDiagonally
+         */
+        public equalsUpperRightDiagonally(x: number, y: number): boolean{
+            let start: Position = {
+                x: x,
+                y: y
+            };
+            let diff: Position = {
+                x: 1,
+                y: -1
+            };
+            let length = 3;
+            return this.equalsLine(start, diff, length);
         }
     }
 }
