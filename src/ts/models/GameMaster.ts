@@ -82,7 +82,7 @@ namespace MainApp {
                     y: start.y + diff.y * offset
                 });
                 // invalid index
-                if (index < 0 && this.field.data.length - 1 < index) {
+                if (index < 0 || this.field.data.length - 1 < index) {
                     return  false;
                 }
                 
