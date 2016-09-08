@@ -34,7 +34,12 @@ namespace MainApp {
         /**
          * putPosition
          */
-        public put(position:Position) {
+        public put(position: Position) {
+            if (this.isGameFinished) {
+                console.log("This game is finished.");
+                this.putFailed();
+                return ;
+            }
             if (this.field.existsPiece(position)) {
                 this.putFailed();
                 return ;
