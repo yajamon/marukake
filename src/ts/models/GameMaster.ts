@@ -12,6 +12,7 @@ namespace MainApp {
         public putFailed = () => { };
         public putSuccess = () => { };
         public callbackFinish = () => { };
+        public isGameFinished = false;
         constructor() {
             let size: Size = { width: 3, height: 3 };
             this.field = new Field(size);
@@ -43,15 +44,17 @@ namespace MainApp {
             this.field.putPiece(player.pieces.shift(), position);
             this.turnManager.turnEnd();
             this.putSuccess();
+            this.checkFinish();
         }
 
         /**
          * checkFinish
          */
         public checkFinish() {
-            if (this.existsEqualLine()) {
+            if (!this.existsEqualLine()) {
                 return ;
             }
+            this.isGameFinished = true;
             this.callbackFinish();
         }
 

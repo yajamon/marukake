@@ -45,5 +45,8 @@ window.addEventListener("load", function () {
         console.log("success put");
         render();
     }
+    gameMaster.callbackFinish = () => {
+        console.log("game finish");
+    }
 
 });
