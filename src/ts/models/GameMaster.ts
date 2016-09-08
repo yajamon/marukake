@@ -75,7 +75,11 @@ namespace MainApp {
          */
         public equalsLine(start:Position, diff:Position, length:number) {
             let baseIndex = this.field.culcIndex(start);
-            let base = this.field.data[baseIndex];
+            let base: Puttable = this.field.data[baseIndex].piece;
+            // no piece
+            if (base == null) {
+                return false;
+            }
             for (let offset = 1; offset < length; offset++) {
                 let index = this.field.culcIndex({
                     x: start.x + diff.x * offset,
@@ -86,8 +90,8 @@ namespace MainApp {
                     return  false;
                 }
                 
+                let target:Puttable = this.field.data[index].piece;
                 // no piece
-                let target = this.field.data[index].piece;
                 if (target == null) {
                     return false;
                 }
