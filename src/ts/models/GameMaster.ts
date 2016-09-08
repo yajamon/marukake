@@ -72,7 +72,8 @@ namespace MainApp {
                     let start: Position = { x: xIndex, y: yIndex };
                     if (this.equalsUpperRightDiagonally(start) ||
                         this.equalsHorizontally(start) ||
-                        this.equalsLowerRightDiagonally(start)
+                        this.equalsLowerRightDiagonally(start) ||
+                        this.equalsVertically(start)
                     ) {
                         return true;
                     }
@@ -147,6 +148,18 @@ namespace MainApp {
         public equalsLowerRightDiagonally(start: Position): boolean {
             let diff: Position = {
                 x: 1,
+                y: 1
+            };
+            let length = 3;
+            return this.equalsLine(start, diff, length);
+        }
+
+        /**
+         * equalsVertically
+         */
+        public equalsVertically(start: Position): boolean {
+            let diff: Position = {
+                x: 0,
                 y: 1
             };
             let length = 3;
