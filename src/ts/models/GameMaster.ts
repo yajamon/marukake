@@ -71,7 +71,8 @@ namespace MainApp {
                 for (let xIndex = 0; xIndex < this.field.size.width; xIndex++) {
                     let start: Position = { x: xIndex, y: yIndex };
                     if (this.equalsUpperRightDiagonally(start) ||
-                        this.equalsHorizontally(start)
+                        this.equalsHorizontally(start) ||
+                        this.equalsLowerRightDiagonally(start)
                     ) {
                         return true;
                     }
@@ -135,6 +136,18 @@ namespace MainApp {
             let diff: Position = {
                 x: 1,
                 y: 0
+            };
+            let length = 3;
+            return this.equalsLine(start, diff, length);
+        }
+
+        /**
+         * equalsUpperRightDiagonally
+         */
+        public equalsLowerRightDiagonally(start: Position): boolean {
+            let diff: Position = {
+                x: 1,
+                y: 1
             };
             let length = 3;
             return this.equalsLine(start, diff, length);
