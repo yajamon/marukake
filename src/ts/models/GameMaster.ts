@@ -92,15 +92,21 @@ namespace MainApp {
             if (base == null) {
                 return false;
             }
+            // if end point is outside of field then line does not exist.
+            let end: Position = {
+                x: start.x + diff.x * (length - 1),
+                y: start.y + diff.y * (length - 1)
+            }
+            if (end.x < 0 || this.field.size.width <= end.x ||
+                end.y < 0 || this.field.size.height <= end.y
+            ) {
+                return false;
+            }
             for (let offset = 1; offset < length; offset++) {
                 let index = this.field.culcIndex({
                     x: start.x + diff.x * offset,
                     y: start.y + diff.y * offset
                 });
-                // invalid index
-                if (index < 0 || this.field.data.length - 1 < index) {
-                    return  false;
-                }
                 
                 let target:Puttable = this.field.data[index].piece;
                 // no piece
