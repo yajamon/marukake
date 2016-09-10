@@ -85,8 +85,8 @@ namespace MainApp {
         /**
          * equalsLine
          */
-        public equalsLine(start:Position, diff:Position, length:number) {
-            let baseIndex = this.field.culcIndex(start);
+        public equalsLine(begin: Position, diff: Position, length: number) {
+            let baseIndex = this.field.culcIndex(begin);
             let base: Puttable = this.field.data[baseIndex].piece;
             // no piece
             if (base == null) {
@@ -94,8 +94,8 @@ namespace MainApp {
             }
             // if end point is outside of field then line does not exist.
             let end: Position = {
-                x: start.x + diff.x * (length - 1),
-                y: start.y + diff.y * (length - 1)
+                x: begin.x + diff.x * (length - 1),
+                y: begin.y + diff.y * (length - 1)
             }
             if (end.x < 0 || this.field.size.width <= end.x ||
                 end.y < 0 || this.field.size.height <= end.y
@@ -104,8 +104,8 @@ namespace MainApp {
             }
             for (let offset = 1; offset < length; offset++) {
                 let index = this.field.culcIndex({
-                    x: start.x + diff.x * offset,
-                    y: start.y + diff.y * offset
+                    x: begin.x + diff.x * offset,
+                    y: begin.y + diff.y * offset
                 });
                 
                 let target:Puttable = this.field.data[index].piece;
