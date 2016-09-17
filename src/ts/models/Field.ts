@@ -28,12 +28,24 @@ namespace MainApp {
             throw new Error("Can't write property");
         }
 
+        public culcIndex(position: Position) {
+            return position.x + position.y * this.size.width;
+        }
+
         /**
          * putPiece
          */
         public putPiece(piece: Puttable, position: Position) {
-            let index = position.x + position.y * this.size.width;
+            let index = this.culcIndex(position);
             this.data[index].piece = piece;
+        }
+
+        /**
+         * existsPiece
+         */
+        public existsPiece(position: Position): boolean {
+            let index = this.culcIndex(position);
+            return this.data[index].piece != null;
         }
     }
 }
